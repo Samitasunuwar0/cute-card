@@ -1,0 +1,133 @@
+body {
+ background-color: #000000ce ;
+}
+
+.body {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 100px;
+}
+
+.mCard {
+ position: relative;
+ top: 50px;
+ width: 300px;
+ height: 400px;
+ cursor: pointer;
+ transform-style: preserve-3d;
+ transform: perspective(2500px);
+ transition: 1s;
+}
+
+.cardFront {
+ position: relative;
+ background-color: #fff;
+ width: 300px;
+ height: 400px;
+ overflow: hidden;
+ transform-origin: left;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+ transition: .6s;
+}
+
+.happy {
+ font-family: Tahoma, sans-serif;
+ text-align: center;
+ margin: 30px;
+ background-image: linear-gradient(120deg, #db4771 0%, #fda085 100%);
+ transition: .1s;
+}
+
+.heart {
+ position: relative;
+ background: #db4771;
+ left: 120px;
+ top: 110px;
+ width: 70px;
+ height: 70px;
+ margin-top: 10px;
+ transform: rotate(-45deg);
+ box-shadow: -10px 10px 90px  #db4771;
+ animation: heart 0.6s linear infinite;
+}
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+.heart::before{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #db4771;
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px 10px 90px  #db4771;
+  }
+  .heart::after{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #db4771;
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: -10px 10px 90px  #db4771;
+  }
+.cardInside {
+ position: absolute;
+ background-color: #fff;
+ width: 300px;
+ height: 400px;
+ z-index: -1;
+ left: 0;
+ top: 0;
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+p {
+ font-family: cursive;
+ margin: 15px 10px 10px 30px;
+ color: #333;
+}
+
+.name {
+ position: absolute;
+ left: 150px;
+ /* top: 200px; */
+ color: #333;
+ text-decoration: underline;
+}
+
+.back {
+ font-family: Tahoma, sans-serif;
+ color: #333;
+ text-align: center;
+ margin: 30px;
+ outline-color: #333;
+ outline-style: dashed;
+}
+
+.mCard:hover {
+ transform: perspective(2500px) rotate(5deg);
+ box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.mCard:hover .cardFront {
+ transform: rotateY(-160deg);
+}
+
+.mCard:hover .happy {
+ visibility: hidden;
+}
+.name{
+    text-decoration: none;
+}
